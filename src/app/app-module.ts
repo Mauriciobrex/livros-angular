@@ -1,17 +1,23 @@
+import { FormsModule } from '@angular/forms';
 import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing-module';
 import { App } from './app';
+import { LivroLista } from './livro-lista/livro-lista';
+import { LivroDados } from './livro-dados/livro-dados';
 
 @NgModule({
   declarations: [
-    App
+    App,
+    LivroLista,
+    LivroDados
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  BrowserModule,
+  AppRoutingModule,
+  FormsModule
+],
   providers: [
     provideBrowserGlobalErrorListeners()
   ],

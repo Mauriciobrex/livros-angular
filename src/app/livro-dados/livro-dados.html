@@ -1,0 +1,67 @@
+
+<div class="container">
+  <h1>Dados do Livro</h1>
+
+  <form (ngSubmit)="incluir()">
+
+    <div>
+      <label for="titulo">Título</label>
+      <input
+        type="text"
+        id="titulo"
+        name="titulo"
+        [(ngModel)]="livro.titulo"
+        required>
+    </div>
+
+    <div>
+      <label for="resumo">Resumo</label>
+      <textarea
+        id="resumo"
+        name="resumo"
+        [(ngModel)]="livro.resumo"
+        required>
+      </textarea>
+    </div>
+
+
+      
+<div>
+  <label for="editora">Editora</label>
+  
+<select
+  id="editora"
+  name="editora"
+  class="form-select"
+  [(ngModel)]="livro.codEditora"
+  required>
+
+  <option [ngValue]="0">Selecione uma editora</option>
+
+  <option
+    *ngFor="let editora of editoras"
+    [ngValue]="editora.codEditora">
+    {{ editora.nome }}
+  </option>
+
+</select>
+
+</div>
+
+
+    <div>
+      <label for="autores">Autores (1 por linha)</label>
+      
+<textarea
+  id="autores"
+  name="autores"
+  class="form-control"
+  [(ngModel)]="autoresForm">
+</textarea>
+
+    </div>
+
+    <button type="submit">Salvar Dados</button>
+
+  </form>
+</div>
